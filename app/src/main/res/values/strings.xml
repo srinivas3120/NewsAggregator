@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">News Aggregator</string>
+    <string name="open_drawer">open drawer</string>
+    <string name="close_drawer">close drawer</string>
+    <string name="title_home">Home</string>
+    <string name="title_the_hindu">The Hindu</string>
+    <string name="title_toi">Times Of India</string>
+    <string name="title_bbc">BBC</string>
+    <string name="title_indian_express">The Indian Express</string>
+    <string name="feed_title">Headley names Mumbai terror attacks mastermind Hafiz Saeed, ISI in court</string>
+    <string name="feed_author">Rahi Gaikwad</string>
+    <string name="feed_desc">Former FBI agent and Lashkar operative David Headley said to a special Mumbai court on Monday that his Lashkar &quot;colleague&quot; Sajid Mir was his main contact in the terror outfit. Acting on ...</string>
+    <string name="feed_category">National</string>
+    <string name="feed_link">http://www.thehindu.com/news/national/2611-mumbai-terror-attacks-david-headleys-deposition-in-mumbai/article8208762.ece?utm_source=RSS_Feed&amp;utm_medium=RSS&amp;utm_campaign=RSS_Syndication</string>
+    <string name="feed_date">Mon, 8 Feb 2016 13:59:11 +0530</string>
+    <string name="feed_by"  formatted="false" > News by %s</string>
+    <string name="feed_pubDate"  formatted="false" > %s </string>
+</resources>
