@@ -31,6 +31,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v=inflater.inflate(R.layout.fragment_home, container, false);
+
         iv_the_hindu = (ImageView) v.findViewById(R.id.iv_the_hindu);
         iv_toi = (ImageView) v.findViewById(R.id.iv_toi);
         iv_indian_express = (ImageView) v.findViewById(R.id.iv_indian_express);

@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity{
 
     boolean doubleBackToExitPressedOnce = false;
     private final Handler mDrawerActionHandler = new Handler();
-    private static final long DRAWER_CLOSE_DELAY_MS = 200;
+    private static final long DRAWER_CLOSE_DELAY_MS = 150;
 
     private DrawerLayout mDrawerLayout;
     private Toolbar toolbar;
@@ -43,6 +43,16 @@ public class MainActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        initializeViews();
+        setUpActionBar();
+        setUpNavigationDrawer();
+
+        navigationView.getMenu().findItem(R.id.nav_home).setChecked(true);
+        displayView(R.id.nav_home);
+
+    }
+
+    private void initializeViews() {
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -53,17 +63,19 @@ public class MainActivity extends AppCompatActivity{
         View headerLayout = navigationView.inflateHeaderView(R.layout.navigation_header);
         civ_profile_pic= (ImageView) headerLayout.findViewById(R.id.civ_profile_pic);
         tv_username= (TextView) headerLayout.findViewById(R.id.tv_username);
+    }
 
+    private void setUpActionBar() {
         ab = getSupportActionBar();
         ab.setHomeAsUpIndicator(R.mipmap.ic_navigation_menu_white);
         ab.setTitle("Home");
         ab.setDisplayHomeAsUpEnabled(true);
+    }
 
+    private void setUpNavigationDrawer() {
         if (navigationView != null) {
             setupDrawerContent(navigationView);
         }
-
-
         actionBarDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout, toolbar,R.string.open_drawer, R.string.close_drawer) {
 
             @Override
@@ -86,9 +98,6 @@ public class MainActivity extends AppCompatActivity{
             }
 
         };
-
-        navigationView.getMenu().findItem(R.id.nav_home).setChecked(true);
-        displayView(R.id.nav_home);
 
     }
 
