@@ -3,6 +3,7 @@ package com.srinivas.mudavath.adapter;
 import android.content.res.Resources;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
+import android.text.Html;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -76,7 +77,11 @@ public class FeedAdapter  extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
             try {
                 startDate = df.parse(feedElement.getPubDate().substring(5,25));
             } catch (ParseException e) {
-                e.printStackTrace();
+                df = new SimpleDateFormat("EEEE, MMMM dd, yyyy hh:mm a z");
+                try{
+                    startDate = df.parse(feedElement.getPubDate());
+                }catch (Exception ex){
+                }
             }
             String feed_pubDate = String.format(res.getString(R.string.feed_pubDate), Util.getFeedDuration(startDate.getTime()));
             viewHolderForFeedElement.tv_feed_pubDate.setVisibility(View.VISIBLE);
@@ -91,8 +96,9 @@ public class FeedAdapter  extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
         }else {
             viewHolderForFeedElement.tv_feed_by.setVisibility(View.GONE);
         }
-        viewHolderForFeedElement.tv_feed_title.setText(feedElement.getTitle().trim());
-        viewHolderForFeedElement.tv_feed_desc.setText(feedElement.getDescription().trim());
+        viewHolderForFeedElement.tv_feed_title.setText(Html.fromHtml(feedElement.getTitle().trim()));
+        viewHolderForFeedElement.tv_feed_desc.setText(
+            Html.fromHtml(feedElement.getDescription().trim()));
 
         if(!TextUtils.isEmpty(feedElement.getThumbnail())){
             viewHolderForFeedElement.iv_feed_thumbnail.setVisibility(View.VISIBLE);

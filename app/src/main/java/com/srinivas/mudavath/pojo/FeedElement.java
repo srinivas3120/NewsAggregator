@@ -1,9 +1,11 @@
 package com.srinivas.mudavath.pojo;
 
+import java.io.Serializable;
+
 /**
  * Created by Mudavath Srinivas on 08-02-2016.
  */
-public class FeedElement {
+public class FeedElement implements Serializable{
 
     private String title;
     private String author;
@@ -12,6 +14,7 @@ public class FeedElement {
     private String thumbnail;
     private String description;
     private String pubDate;
+    private String story;
 
 
     public FeedElement(){
@@ -82,5 +85,13 @@ public class FeedElement {
 
     public void setPubDate(String pubDate) {
         this.pubDate = pubDate;
+    }
+
+    public String getStory() {
+        return story;
+    }
+
+    public void setStory(String story) {
+        this.story = story;
     }
 }

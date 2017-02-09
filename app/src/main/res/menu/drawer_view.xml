@@ -3,26 +3,26 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_home"
+            android:id="@+id/nav_editorials"
             android:icon="@drawable/ic_home"
-            android:title="Home" />
+            android:title="Editorials" />
         <item
-            android:id="@+id/nav_bbc"
-            android:icon="@drawable/ic_bbc"
-            android:title="BBC"
-            />
+            android:id="@+id/nav_ie_opinions"
+            android:icon="@drawable/ic_indian_express"
+            android:title="IE Opinions" />
+        <item
+            android:id="@+id/nav_indian_express"
+            android:icon="@drawable/ic_indian_express"
+            android:title="The Indian Express" />
         <item
             android:id="@+id/nav_the_hindu"
             android:icon="@drawable/ic_hindu"
             android:title="The Hindu" />
         <item
-            android:id="@+id/nav_toi"
-            android:icon="@drawable/ic_toi"
-            android:title="Times Of India" />
-        <item
-            android:id="@+id/nav_indian_express"
-            android:icon="@drawable/ic_indian_express"
-            android:title="The Indian Express" />
+            android:id="@+id/nav_bbc"
+            android:icon="@drawable/ic_bbc"
+            android:title="BBC"
+            />
     </group>
 
 

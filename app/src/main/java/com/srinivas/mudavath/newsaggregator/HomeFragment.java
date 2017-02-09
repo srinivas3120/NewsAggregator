@@ -53,7 +53,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                 displayView(R.id.nav_the_hindu);
                 break;
             case R.id.iv_toi:
-                displayView(R.id.nav_toi);
+                displayView(R.id.nav_ie_opinions);
                 break;
             case R.id.iv_bbc:
                 displayView(R.id.nav_bbc);
@@ -80,12 +80,6 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                 fragment.setArguments(bundle);
                 title = getString(R.string.title_the_hindu);
                 break;
-            case R.id.nav_toi:
-                fragment = new TabFeedsFragment();
-                bundle.putString("channel", res.getString(R.string.title_toi));
-                fragment.setArguments(bundle);
-                title = getString(R.string.title_toi);
-                break;
             case R.id.nav_bbc:
                 fragment = new TabFeedsFragment();
                 bundle.putString("channel", res.getString(R.string.title_bbc));
@@ -98,13 +92,12 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                 fragment.setArguments(bundle);
                 title = getString(R.string.title_indian_express);
                 break;
-            case R.id.nav_home:
-                fragment = new FeedsFragment();
-                title = getString(R.string.title_home);
-                break;
+            case R.id.nav_ie_opinions:
             default:
-                fragment = new HomeFragment();
-                title = getString(R.string.title_home);
+                fragment = new TabFeedsFragment();
+                bundle.putString("channel", res.getString(R.string.title_ie_opinions));
+                fragment.setArguments(bundle);
+                title = getString(R.string.title_ie_opinions);
                 break;
         }
         ((MainActivity)getActivity()).getNavigationView().getMenu().findItem(id).setChecked(true);

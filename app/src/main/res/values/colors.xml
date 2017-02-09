@@ -6,5 +6,6 @@
     <color name="black">#000000</color>
     <color name="white">#ffffff</color>
     <color name="menu_separator_bottom">#f8f8f8</color>
-    <color name="light_gray">#DDDDDD</color>
+    <color name="light_gray">#EEEEEE</color>
+    <color name="gray">#CCCCCC</color>
 </resources>

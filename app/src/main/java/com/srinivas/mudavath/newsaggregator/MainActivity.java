@@ -47,8 +47,8 @@ public class MainActivity extends AppCompatActivity{
         setUpActionBar();
         setUpNavigationDrawer();
 
-        navigationView.getMenu().findItem(R.id.nav_home).setChecked(true);
-        displayView(R.id.nav_home);
+        navigationView.getMenu().findItem(R.id.nav_editorials).setChecked(true);
+        displayView(R.id.nav_editorials);
 
     }
 
@@ -136,11 +136,11 @@ public class MainActivity extends AppCompatActivity{
                 fragment.setArguments(bundle);
                 title = getString(R.string.title_the_hindu);
                 break;
-            case R.id.nav_toi:
+            case R.id.nav_ie_opinions:
                 fragment = new TabFeedsFragment();
-                bundle.putString("channel", res.getString(R.string.title_toi));
+                bundle.putString("channel", res.getString(R.string.title_ie_opinions));
                 fragment.setArguments(bundle);
-                title = getString(R.string.title_toi);
+                title = getString(R.string.title_ie_opinions);
                 break;
             case R.id.nav_bbc:
                 fragment = new TabFeedsFragment();
@@ -154,13 +154,12 @@ public class MainActivity extends AppCompatActivity{
                 fragment.setArguments(bundle);
                 title = getString(R.string.title_indian_express);
                 break;
-            case R.id.nav_home:
-                fragment = new HomeFragment();
-                title = getString(R.string.title_home);
-                break;
+            case R.id.nav_editorials:
             default:
-                fragment = new HomeFragment();
-                title = getString(R.string.title_home);
+                fragment = new TabFeedsFragment();
+                bundle.putString("channel", res.getString(R.string.title_editorials));
+                fragment.setArguments(bundle);
+                title = getString(R.string.title_editorials);
                 break;
         }
 
@@ -190,10 +189,7 @@ public class MainActivity extends AppCompatActivity{
     public void onBackPressed() {
         if (mDrawerLayout.isDrawerOpen(GravityCompat.START)) {
             mDrawerLayout.closeDrawer(GravityCompat.START);
-        }else if(selectedItem!=R.id.nav_home){
-            navigationView.getMenu().findItem(R.id.nav_home).setChecked(true);
-            displayView(R.id.nav_home);
-        } else {
+        }else {
 
             View view = MainActivity.this.getCurrentFocus();
             if (view != null) {
